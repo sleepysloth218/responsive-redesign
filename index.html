@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Redesign</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="page-section primary">
+            <div class="content-wrapper">
+                <h1>Responsive Redesign</h1>
+                <h3 class="page-subtitle">Improving the usability of a local service website</h3>
+
+                <br />
+
+                <h2>Introduction</h2>
+                <p class="body-text"><b>Goal:</b> identify usability and accessibility issues in a public webpage and
+                    create a new design for it</p>
+
+                <p class="body-text"><b>How:</b></p>
+                <ul>
+                    <li>analyze the existing page and look for problems</li>
+                    <li>design low-fi and high-fi prototypes for the new page</li>
+                    <li>create the new responsive page in HTML/CSS compatible with 3 device sizes</li>
+                </ul>
+
+
+                <h3>The website of choice: <a href="https://www.bccls.org/" target="_blank">https://www.bccls.org/</a>
+                </h3>
+
+                <div class="img-wrapper">
+                    <a href="assets/ogwebsite.png" target="_blank">
+                        <img src="assets/ogwebsite.png" alt="Original BCCLS website">
+                    </a>
+                </div>
+
+                <p>I chose this website for my local library account at home. I use this once every couple of months and
+                    every time, I find myself having to scan the full page of irregularly laid out irreleveant
+                    information to find the important stuff I want to access.</p>
+            </div>
+        </div>
+
+        <div class="page-section secondary">
+            <div class="content-wrapper">
+                <h2>Identifying Problems</h2>
+
+                <p>I analyzed the existing webpage, based on usability and accessibility criteria. These issues provided
+                    goals to target in the redesign process.</p>
+
+                <h3>Usability</h3>
+                <p><b>Biggest reasons why I chose this website: layout and lack of responsiveness</p></b>
+
+                <ul>
+                    <li>layout is <b>cluttered and distracting</b>
+                        <ul>
+                            <li>no specific section draws the eyes as being important (except for “apply for an ecard!”
+                                button which is styled completely differently to stand out as if it is the
+                                thing users want to look for)</li>
+                            <li>as a user, most commonly used sections are the search, login, and find a library
+                                sections, which are not clearly distinguished among other <b>random information</b> such
+                                as pet
+                                pictures</li>
+                            <li><b>no clear reading order or visual hierarchy</b> to match the level of relevance of
+                                different
+                                information</li>
+                            <li>partial grid layout but cells are misaligned and all uniform despite varying levels of
+                                importance</li>
+                        </ul>
+                    </li>
+
+                    <li><b>inconsistent text styling</b>, especially among links makes unintuitive distinctions between
+                        seemingly similar types of text
+                        <ul>
+                            <li>headings match, but description text varies in size and weight</li>
+                            <li>“click here” is different in the "Want Ads" section than in the "Did You Know…” section
+                                and from the links in the “Readers' Advisory”</li>
+                        </ul>
+                    </li>
+
+                    <li>much of page content corresponds to info found in dropdown menus but often with different names
+                        <ul>
+                            <li>“eBCCLS” section is under Digital Collections</li>
+                            <li>“Did You Know…” section wants to highlight services which is under Services</li>
+                            <li>“Be a Champion” is the same as Support Your Library</li>
+                        </ul>
+                    </li>
+
+                    <li>slideshow in center highlights current events and services which are repeated in other sections
+                    </li>
+
+                    <li>other <b>redundant or vaguely named content</b>
+                        <ul>
+                            <li>“Limited Public Services Offered at Select Libraries!” is outdated announcement
+                                linking to post-COVID reopenings, though “public services” is misleading
+                                considering services has different meaning in navbar</li>
+                            <li>
+                                What is “Browse Search” under catalog search input? just takes you to an empty page with
+                                a search bar
+                            </li>
+                            <li>
+                                Why is “My Title Lists” under the login?
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><b>page is fixed width</b>, with no responsiveness for screen size</li>
+                    <li><b>mobile site is just a completely different webpage with different styles for many
+                            components</b>
+                        <ul>
+                            <li>page first displays the desktop site on load which is too big detailed for the phone,
+                                mobile site loads after a few seconds
+                            </li>
+                            <li>scrolling to the bottom of this site shows actual navigation menu with a button to show
+                                full desktop site</li>
+                            <li>also a button to open “classic mobile site” which is a <em>whole other site</em> with
+                                its own
+                                problems that we don't have the time to get into…</li>
+                        </ul>
+                    </li>
+                    <li><b>most of the information from the desktop site is hidden</b>
+                        <ul>
+                            <li><b>pros: distills down clutter</b> and highlights essential functionality
+                                unlike
+                                desktop site</li>
+                            <li><b>cons: poor memorability, disorienting when switching devices</b> especially for users
+                                used to one or
+                                other</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <p><a href="https://wave.webaim.org/" target="_blank">WebAIM WAVE</a> was used to detect accessibility
+                    issues on the
+                    page. Here's a summary of what it reported:</p>
+
+                <ul>
+                    <li><b>page language</b> not specified</li>
+                    <li>many <b>HTML form elements</b> (text input, dropdowns, radio buttons, etc.) that do not have
+                        attached labels
+                        <ul>
+                            <li>personally, unsure of the severity of this given there is descriptive text next to them
+                                so
+                                even if not explicitly using a &#60;label&#62; attached to the inputs, screen readers
+                                should
+                                provide some description</li>
+                        </ul>
+                    </li>
+                    <li>some images have <b>alternative text</b> but some do not</li>
+                    <li>only a couple of random <b>ARIA tags</b>, no consistent use of them</li>
+                    <li>most of the page made good use of hierarchical elements like different <b>heading tags</b>,
+                        except for
+                        the navigation menu at the bottom</li>
+                    <li>“forgot your password?” <b>text is too small</b> in login section</li>
+                    <li>many flagged <b>contrast errors</b> for the white headings on light blue backgrounds
+                        <ul>
+                            <li>after desaturating the page most do not seem <em>too</em> severe except for one under
+                                the “Want
+                                Ads” section</li>
+
+                            <div class="img-wrapper">
+                                <a href="assets/contrasterror.png" target="_blank" style="width: 50%;">
+                                    <img src="assets/contrasterror.png" alt="Contrast error" style="width: 50%;">
+                                </a>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p>I agreed with most of these errors though I was unsure about some of the contrast and form label
+                    issues. I also noticed some things that seemed like issues to me that weren't flagged by WAVE such
+                    as the fact that the <b>buttons are images not text</b>, though they do have alt text for
+                    screenreaders.</p>
+            </div>
+        </div>
+
+        <div class="page-section primary">
+            <div class="content-wrapper">
+                <h2>Low-Fi Mockups</h2>
+                <p>Using Balsamiq, I designed and annotated low-fi wireframe prototypes of my new redesigned version of
+                    the site for 3
+                    different devices sizes: desktop, tablet and mobile.</p>
+
+                <a href="/assets/lowfi/desktop.pdf">Desktop</a>
+
+                <div class="pdf-wrapper">
+                    <iframe src="/assets/lowfi/desktop.pdf" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-section secondary">
+            <div class="content-wrapper">
+                <h2>Style Guide</h2>
+                <p>I developed a style guide to define the key aesthetic characteristics of the page including, fonts,
+                    colors, and the styling for the major components.</p>
+            </div>
+        </div>
+
+        <div class="page-section primary">
+            <div class="content-wrapper">
+                <h2>High-Fi Mockups</h2>
+                <p>Having decided on the overall layout and aesthetics of the page components, I turned the low-fi
+                    mockups into high-fi mockups for the 3 device sizes in Figma.</p>
+
+            </div>
+        </div>
+
+        <div class="page-section secondary">
+            <div class="content-wrapper">
+                <h2>Redesigned Website</h2>
+                <p>Finally, putting all of this together, I built out the webpage using HTML and CSS. No extra
+                    frameworks or outside code were used for this, everything was written by me purely from scratch. All
+                    images were sourced from the original website and fonts/icons are from Google Fonts (sorry Jeff).
+                </p>
+
+                <h3>View the final product <a href="https://sleepysloth218.github.io/bccls/" target="_blank">here</a>
+                </h3>
+            </div>
+        </div>
+
+        <div class="page-section primary">
+            <div class="content-wrapper">
+                <h2>Conclusion</h2>
+                <p>This project was a very fun opportunity to practice the design process and exercise my web
+                    development skills. In the past, when working on websites I was more focused on aesthetic design
+                    than usability, but this proje
+
+                <p><b>Biggest takeaway: flexbox is your best friend kids :)</b></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

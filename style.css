@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,100;1,400;1,900&display=swap");
+
+/* ======= JEFF'S CSS RESET ======= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ========== MY STYLES ========== */
+
+body {
+  font-family: Roboto, sans-serif;
+  color: #1d3557;
+  line-height: 1.5;
+}
+
+.page-section {
+  width: 100%;
+}
+
+.content-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.primary {
+  background-color: #f1faee;
+}
+
+.secondary {
+  background-color: #a8dadc;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+h3.page-subtitle {
+  margin: 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+ol > li > ul > li {
+  margin: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+a {
+  color: #e63e35;
+  font-weight: bold;
+}
+
+.img-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.img-wrapper > a {
+  width: 60%;
+}
+
+.img-wrapper img {
+  width: 100%;
+}
+
+img.full-width {
+  width: 100%;
+}
+
+.column-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.column > h3 {
+  align-self: center;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.grid-item {
+  width: 45%;
+  margin: 10px 0;
+}
